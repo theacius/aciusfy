@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-moon"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <linearGradient id="mn" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-moon)">
+    <path fill="url(#mn)" opacity=".95" d="M392 96c-88 10-158 78-170 166 12 96 90 174 186 186 26 3 54-2 78-12-62-18-106-76-106-144 0-72 52-134 120-150-32-48-58-52-108-52z"/>
+    <g fill="#cbd5e1" opacity=".75">
+      <circle cx="420" cy="112" r="2.2"/><circle cx="448" cy="196" r="1.5"/><circle cx="404" cy="372" r="2"/>
+    </g>
+    <circle cx="256" cy="256" r="178" stroke="#94a3b8" stroke-width="3" fill="none" opacity=".45"/>
+    <path stroke="#e2e8f0" stroke-width="1.5" opacity=".35" fill="none" d="M256 90 A166 166 0 0 1 422 256"/>
+  </g>
+</svg>

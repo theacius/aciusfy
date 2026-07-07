@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="hole"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="166" fill="#000"/></mask>
+    <linearGradient id="gd" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a16207"/><stop offset="35%" stop-color="#fde047"/><stop offset="70%" stop-color="#eab308"/><stop offset="100%" stop-color="#854d0e"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-gold)">
+    <path stroke="url(#gd)" stroke-width="5" fill="none" d="M56 56h72v72M384 56h72v72M56 384v72h72M384 456h72v-72"/>
+    <path stroke="url(#gd)" stroke-width="3" fill="none" opacity=".65" d="M92 92l52 52M420 92l-52 52M92 420l52-52M420 420l-52-52"/>
+    <circle cx="256" cy="256" r="178" stroke="url(#gd)" stroke-width="7" fill="none"/>
+    <circle cx="256" cy="256" r="186" stroke="#fef08a" stroke-width="2" opacity=".75">
+      <animate attributeName="opacity" values=".45;1;.45" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

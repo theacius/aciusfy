@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-sakura"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <linearGradient id="sk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-sakura)">
+    <g fill="url(#sk)" opacity=".88">
+      <ellipse cx="88" cy="120" rx="32" ry="18" transform="rotate(-20 88 120)"/>
+      <ellipse cx="424" cy="140" rx="30" ry="17" transform="rotate(35 424 140)"/>
+      <ellipse cx="72" cy="360" rx="26" ry="15" transform="rotate(50 72 360)"/>
+      <ellipse cx="440" cy="340" rx="28" ry="16" transform="rotate(-25 440 340)"/>
+      <ellipse cx="256" cy="56" rx="24" ry="14" transform="rotate(8 256 56)"/>
+      <ellipse cx="48" cy="240" rx="22" ry="13" transform="rotate(70 48 240)"/>
+      <ellipse cx="464" cy="260" rx="22" ry="13" transform="rotate(-55 464 260)"/>
+    </g>
+    <circle cx="256" cy="256" r="186" stroke="#f9a8d4" stroke-width="3.5" fill="none" opacity=".65"/>
+    <circle cx="256" cy="256" r="192" stroke="#fbcfe8" stroke-width="1.5" opacity=".45" stroke-dasharray="14 20" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" from="0" to="68" dur="10s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

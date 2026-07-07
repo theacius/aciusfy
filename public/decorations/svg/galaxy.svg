@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-galaxy"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <radialGradient id="gx" cx="50%" cy="50%" r="65%">
+      <stop offset="55%" stop-color="#1e1b4b" stop-opacity="0"/><stop offset="100%" stop-color="#312e81" stop-opacity=".45"/>
+    </radialGradient>
+  </defs>
+  <g mask="url(#m-galaxy)">
+    <circle cx="256" cy="256" r="248" fill="url(#gx)"/>
+    <g fill="#e9d5ff" opacity=".92">
+      <circle cx="112" cy="128" r="2"/><circle cx="400" cy="152" r="1.5"/><circle cx="368" cy="392" r="2.5"/><circle cx="88" cy="304" r="1.2"/>
+      <circle cx="196" cy="84" r="1"/><circle cx="420" cy="288" r="2"/><circle cx="152" cy="412" r="1.5"/><circle cx="324" cy="76" r="1.8"/>
+    </g>
+    <ellipse cx="256" cy="256" rx="188" ry="78" stroke="#a78bfa" stroke-width="2" fill="none" opacity=".45" transform="rotate(-22 256 256)"/>
+    <ellipse cx="256" cy="256" rx="188" ry="78" stroke="#6366f1" stroke-width="2" fill="none" opacity=".35" transform="rotate(38 256 256)"/>
+    <circle cx="256" cy="256" r="176" stroke="#c4b5fd" stroke-width="3" fill="none" opacity=".7">
+      <animate attributeName="stroke-opacity" values=".4;.95;.4" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

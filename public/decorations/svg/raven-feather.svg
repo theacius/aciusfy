@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-raven"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <linearGradient id="rf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0a09"/><stop offset="100%" stop-color="#57534e"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-raven)">
+    <path fill="url(#rf)" opacity=".92" d="M48 200 Q72 120 112 96 Q96 180 88 280 Q68 240 48 200z"/>
+    <path fill="none" stroke="#292524" stroke-width="1.5" opacity=".6" d="M100 110 Q88 200 80 300"/>
+    <path fill="#1c1917" opacity=".45" d="M56 200 Q90 150 120 170 Q88 210 56 200z"/>
+    <path fill="url(#rf)" opacity=".92" transform="scale(-1 1) translate(-512 0)" d="M48 200 Q72 120 112 96 Q96 180 88 280 Q68 240 48 200z"/>
+    <path fill="none" stroke="#292524" stroke-width="1.5" opacity=".6" transform="scale(-1 1) translate(-512 0)" d="M100 110 Q88 200 80 300"/>
+    <path fill="#1c1917" opacity=".45" transform="scale(-1 1) translate(-512 0)" d="M56 200 Q90 150 120 170 Q88 210 56 200z"/>
+    <circle cx="256" cy="256" r="186" stroke="#44403c" stroke-width="3" fill="none" opacity=".55"/>
+    <path stroke="#78716c" stroke-width="2" fill="none" opacity=".35" d="M256 80 Q200 256 256 432 Q312 256 256 80"/>
+  </g>
+</svg>

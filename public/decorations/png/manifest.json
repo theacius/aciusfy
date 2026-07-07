@@ -1,0 +1,474 @@
+{
+  "generatedAt": "2026-03-31T20:27:55.311Z",
+  "items": [
+    {
+      "file": "dec-s0-r0-c0.png",
+      "url": "/decorations/png/dec-s0-r0-c0.png",
+      "sheet": 0,
+      "row": 0,
+      "col": 0
+    },
+    {
+      "file": "dec-s0-r0-c1.png",
+      "url": "/decorations/png/dec-s0-r0-c1.png",
+      "sheet": 0,
+      "row": 0,
+      "col": 1
+    },
+    {
+      "file": "dec-s0-r0-c2.png",
+      "url": "/decorations/png/dec-s0-r0-c2.png",
+      "sheet": 0,
+      "row": 0,
+      "col": 2
+    },
+    {
+      "file": "dec-s0-r1-c0.png",
+      "url": "/decorations/png/dec-s0-r1-c0.png",
+      "sheet": 0,
+      "row": 1,
+      "col": 0
+    },
+    {
+      "file": "dec-s0-r1-c1.png",
+      "url": "/decorations/png/dec-s0-r1-c1.png",
+      "sheet": 0,
+      "row": 1,
+      "col": 1
+    },
+    {
+      "file": "dec-s0-r1-c2.png",
+      "url": "/decorations/png/dec-s0-r1-c2.png",
+      "sheet": 0,
+      "row": 1,
+      "col": 2
+    },
+    {
+      "file": "dec-s0-r2-c0.png",
+      "url": "/decorations/png/dec-s0-r2-c0.png",
+      "sheet": 0,
+      "row": 2,
+      "col": 0
+    },
+    {
+      "file": "dec-s0-r2-c1.png",
+      "url": "/decorations/png/dec-s0-r2-c1.png",
+      "sheet": 0,
+      "row": 2,
+      "col": 1
+    },
+    {
+      "file": "dec-s0-r2-c2.png",
+      "url": "/decorations/png/dec-s0-r2-c2.png",
+      "sheet": 0,
+      "row": 2,
+      "col": 2
+    },
+    {
+      "file": "dec-s1-r0-c0.png",
+      "url": "/decorations/png/dec-s1-r0-c0.png",
+      "sheet": 1,
+      "row": 0,
+      "col": 0
+    },
+    {
+      "file": "dec-s1-r0-c1.png",
+      "url": "/decorations/png/dec-s1-r0-c1.png",
+      "sheet": 1,
+      "row": 0,
+      "col": 1
+    },
+    {
+      "file": "dec-s1-r0-c2.png",
+      "url": "/decorations/png/dec-s1-r0-c2.png",
+      "sheet": 1,
+      "row": 0,
+      "col": 2
+    },
+    {
+      "file": "dec-s1-r1-c0.png",
+      "url": "/decorations/png/dec-s1-r1-c0.png",
+      "sheet": 1,
+      "row": 1,
+      "col": 0
+    },
+    {
+      "file": "dec-s1-r1-c1.png",
+      "url": "/decorations/png/dec-s1-r1-c1.png",
+      "sheet": 1,
+      "row": 1,
+      "col": 1
+    },
+    {
+      "file": "dec-s1-r1-c2.png",
+      "url": "/decorations/png/dec-s1-r1-c2.png",
+      "sheet": 1,
+      "row": 1,
+      "col": 2
+    },
+    {
+      "file": "dec-s1-r2-c0.png",
+      "url": "/decorations/png/dec-s1-r2-c0.png",
+      "sheet": 1,
+      "row": 2,
+      "col": 0
+    },
+    {
+      "file": "dec-s1-r2-c1.png",
+      "url": "/decorations/png/dec-s1-r2-c1.png",
+      "sheet": 1,
+      "row": 2,
+      "col": 1
+    },
+    {
+      "file": "dec-s1-r2-c2.png",
+      "url": "/decorations/png/dec-s1-r2-c2.png",
+      "sheet": 1,
+      "row": 2,
+      "col": 2
+    },
+    {
+      "file": "dec-s2-r0-c0.png",
+      "url": "/decorations/png/dec-s2-r0-c0.png",
+      "sheet": 2,
+      "row": 0,
+      "col": 0
+    },
+    {
+      "file": "dec-s2-r0-c1.png",
+      "url": "/decorations/png/dec-s2-r0-c1.png",
+      "sheet": 2,
+      "row": 0,
+      "col": 1
+    },
+    {
+      "file": "dec-s2-r0-c2.png",
+      "url": "/decorations/png/dec-s2-r0-c2.png",
+      "sheet": 2,
+      "row": 0,
+      "col": 2
+    },
+    {
+      "file": "dec-s2-r1-c0.png",
+      "url": "/decorations/png/dec-s2-r1-c0.png",
+      "sheet": 2,
+      "row": 1,
+      "col": 0
+    },
+    {
+      "file": "dec-s2-r1-c1.png",
+      "url": "/decorations/png/dec-s2-r1-c1.png",
+      "sheet": 2,
+      "row": 1,
+      "col": 1
+    },
+    {
+      "file": "dec-s2-r1-c2.png",
+      "url": "/decorations/png/dec-s2-r1-c2.png",
+      "sheet": 2,
+      "row": 1,
+      "col": 2
+    },
+    {
+      "file": "dec-s3-r0-c0.png",
+      "url": "/decorations/png/dec-s3-r0-c0.png",
+      "sheet": 3,
+      "row": 0,
+      "col": 0
+    },
+    {
+      "file": "dec-s3-r0-c1.png",
+      "url": "/decorations/png/dec-s3-r0-c1.png",
+      "sheet": 3,
+      "row": 0,
+      "col": 1
+    },
+    {
+      "file": "dec-s3-r0-c2.png",
+      "url": "/decorations/png/dec-s3-r0-c2.png",
+      "sheet": 3,
+      "row": 0,
+      "col": 2
+    },
+    {
+      "file": "dec-s3-r1-c0.png",
+      "url": "/decorations/png/dec-s3-r1-c0.png",
+      "sheet": 3,
+      "row": 1,
+      "col": 0
+    },
+    {
+      "file": "dec-s3-r1-c1.png",
+      "url": "/decorations/png/dec-s3-r1-c1.png",
+      "sheet": 3,
+      "row": 1,
+      "col": 1
+    },
+    {
+      "file": "dec-s3-r1-c2.png",
+      "url": "/decorations/png/dec-s3-r1-c2.png",
+      "sheet": 3,
+      "row": 1,
+      "col": 2
+    },
+    {
+      "file": "dec-s3-r2-c0.png",
+      "url": "/decorations/png/dec-s3-r2-c0.png",
+      "sheet": 3,
+      "row": 2,
+      "col": 0
+    },
+    {
+      "file": "dec-s3-r2-c1.png",
+      "url": "/decorations/png/dec-s3-r2-c1.png",
+      "sheet": 3,
+      "row": 2,
+      "col": 1
+    },
+    {
+      "file": "dec-s3-r2-c2.png",
+      "url": "/decorations/png/dec-s3-r2-c2.png",
+      "sheet": 3,
+      "row": 2,
+      "col": 2
+    },
+    {
+      "file": "dec-s4-r0-c0.png",
+      "url": "/decorations/png/dec-s4-r0-c0.png",
+      "sheet": 4,
+      "row": 0,
+      "col": 0
+    },
+    {
+      "file": "dec-s4-r0-c1.png",
+      "url": "/decorations/png/dec-s4-r0-c1.png",
+      "sheet": 4,
+      "row": 0,
+      "col": 1
+    },
+    {
+      "file": "dec-s4-r0-c2.png",
+      "url": "/decorations/png/dec-s4-r0-c2.png",
+      "sheet": 4,
+      "row": 0,
+      "col": 2
+    },
+    {
+      "file": "dec-s4-r1-c0.png",
+      "url": "/decorations/png/dec-s4-r1-c0.png",
+      "sheet": 4,
+      "row": 1,
+      "col": 0
+    },
+    {
+      "file": "dec-s4-r1-c1.png",
+      "url": "/decorations/png/dec-s4-r1-c1.png",
+      "sheet": 4,
+      "row": 1,
+      "col": 1
+    },
+    {
+      "file": "dec-s4-r1-c2.png",
+      "url": "/decorations/png/dec-s4-r1-c2.png",
+      "sheet": 4,
+      "row": 1,
+      "col": 2
+    },
+    {
+      "file": "dec-s4-r2-c0.png",
+      "url": "/decorations/png/dec-s4-r2-c0.png",
+      "sheet": 4,
+      "row": 2,
+      "col": 0
+    },
+    {
+      "file": "dec-s4-r2-c1.png",
+      "url": "/decorations/png/dec-s4-r2-c1.png",
+      "sheet": 4,
+      "row": 2,
+      "col": 1
+    },
+    {
+      "file": "dec-s4-r2-c2.png",
+      "url": "/decorations/png/dec-s4-r2-c2.png",
+      "sheet": 4,
+      "row": 2,
+      "col": 2
+    },
+    {
+      "file": "dec-s5-r0-c0.png",
+      "url": "/decorations/png/dec-s5-r0-c0.png",
+      "sheet": 5,
+      "row": 0,
+      "col": 0
+    },
+    {
+      "file": "dec-s5-r0-c1.png",
+      "url": "/decorations/png/dec-s5-r0-c1.png",
+      "sheet": 5,
+      "row": 0,
+      "col": 1
+    },
+    {
+      "file": "dec-s5-r0-c2.png",
+      "url": "/decorations/png/dec-s5-r0-c2.png",
+      "sheet": 5,
+      "row": 0,
+      "col": 2
+    },
+    {
+      "file": "dec-s5-r1-c0.png",
+      "url": "/decorations/png/dec-s5-r1-c0.png",
+      "sheet": 5,
+      "row": 1,
+      "col": 0
+    },
+    {
+      "file": "dec-s5-r1-c1.png",
+      "url": "/decorations/png/dec-s5-r1-c1.png",
+      "sheet": 5,
+      "row": 1,
+      "col": 1
+    },
+    {
+      "file": "dec-s5-r1-c2.png",
+      "url": "/decorations/png/dec-s5-r1-c2.png",
+      "sheet": 5,
+      "row": 1,
+      "col": 2
+    },
+    {
+      "file": "dec-s5-r2-c0.png",
+      "url": "/decorations/png/dec-s5-r2-c0.png",
+      "sheet": 5,
+      "row": 2,
+      "col": 0
+    },
+    {
+      "file": "dec-s5-r2-c1.png",
+      "url": "/decorations/png/dec-s5-r2-c1.png",
+      "sheet": 5,
+      "row": 2,
+      "col": 1
+    },
+    {
+      "file": "dec-s5-r2-c2.png",
+      "url": "/decorations/png/dec-s5-r2-c2.png",
+      "sheet": 5,
+      "row": 2,
+      "col": 2
+    },
+    {
+      "file": "dec-s6-r0-c0.png",
+      "url": "/decorations/png/dec-s6-r0-c0.png",
+      "sheet": 6,
+      "row": 0,
+      "col": 0
+    },
+    {
+      "file": "dec-s6-r0-c1.png",
+      "url": "/decorations/png/dec-s6-r0-c1.png",
+      "sheet": 6,
+      "row": 0,
+      "col": 1
+    },
+    {
+      "file": "dec-s6-r0-c2.png",
+      "url": "/decorations/png/dec-s6-r0-c2.png",
+      "sheet": 6,
+      "row": 0,
+      "col": 2
+    },
+    {
+      "file": "dec-s6-r0-c3.png",
+      "url": "/decorations/png/dec-s6-r0-c3.png",
+      "sheet": 6,
+      "row": 0,
+      "col": 3
+    },
+    {
+      "file": "dec-s6-r1-c0.png",
+      "url": "/decorations/png/dec-s6-r1-c0.png",
+      "sheet": 6,
+      "row": 1,
+      "col": 0
+    },
+    {
+      "file": "dec-s6-r1-c1.png",
+      "url": "/decorations/png/dec-s6-r1-c1.png",
+      "sheet": 6,
+      "row": 1,
+      "col": 1
+    },
+    {
+      "file": "dec-s6-r1-c2.png",
+      "url": "/decorations/png/dec-s6-r1-c2.png",
+      "sheet": 6,
+      "row": 1,
+      "col": 2
+    },
+    {
+      "file": "dec-s6-r1-c3.png",
+      "url": "/decorations/png/dec-s6-r1-c3.png",
+      "sheet": 6,
+      "row": 1,
+      "col": 3
+    },
+    {
+      "file": "dec-s6-r2-c0.png",
+      "url": "/decorations/png/dec-s6-r2-c0.png",
+      "sheet": 6,
+      "row": 2,
+      "col": 0
+    },
+    {
+      "file": "dec-s6-r2-c1.png",
+      "url": "/decorations/png/dec-s6-r2-c1.png",
+      "sheet": 6,
+      "row": 2,
+      "col": 1
+    },
+    {
+      "file": "dec-s6-r2-c2.png",
+      "url": "/decorations/png/dec-s6-r2-c2.png",
+      "sheet": 6,
+      "row": 2,
+      "col": 2
+    },
+    {
+      "file": "dec-s6-r2-c3.png",
+      "url": "/decorations/png/dec-s6-r2-c3.png",
+      "sheet": 6,
+      "row": 2,
+      "col": 3
+    },
+    {
+      "file": "dec-s6-r3-c0.png",
+      "url": "/decorations/png/dec-s6-r3-c0.png",
+      "sheet": 6,
+      "row": 3,
+      "col": 0
+    },
+    {
+      "file": "dec-s6-r3-c1.png",
+      "url": "/decorations/png/dec-s6-r3-c1.png",
+      "sheet": 6,
+      "row": 3,
+      "col": 1
+    },
+    {
+      "file": "dec-s6-r3-c2.png",
+      "url": "/decorations/png/dec-s6-r3-c2.png",
+      "sheet": 6,
+      "row": 3,
+      "col": 2
+    },
+    {
+      "file": "dec-s6-r3-c3.png",
+      "url": "/decorations/png/dec-s6-r3-c3.png",
+      "sheet": 6,
+      "row": 3,
+      "col": 3
+    }
+  ]
+}

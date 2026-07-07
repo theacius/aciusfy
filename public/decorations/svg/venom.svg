@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-venom"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <linearGradient id="vg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/><stop offset="40%" stop-color="#164e63"/><stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="vgb" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g mask="url(#m-venom)" filter="url(#vgb)">
+    <path fill="url(#vg)" d="M256 28c-18 52-52 68-72 112 6-44 38-78 72-104zm0 0c18 52 52 68 72 112-6-44-38-78-72-104zM40 220c52-6 72-36 116-56-44 6-78 38-116 56zm432 0c-52-6-72-36-116-56 44 6 78 38 116 56zM56 392c48 16 64 48 108 68-44-8-80-40-108-68zm400 0c-48 16-64 48-108 68 44-8 80-40 108-68z"/>
+    <path fill="#134e4a" opacity=".75" d="M108 288c32 24 42 58 62 88-28-20-52-50-62-88zm296 0c-32 24-42 58-62 88 28-20 52-50 62-88z"/>
+    <circle cx="256" cy="256" r="178" stroke="#0e7490" stroke-width="5" fill="none" opacity=".9"/>
+    <circle cx="256" cy="256" r="174" stroke="#22d3ee" stroke-width="2" opacity=".45">
+      <animate attributeName="opacity" values=".25;.55;.25" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <path stroke="#0c4a6e" stroke-width="2" opacity=".6" d="M256 90v32M256 390v32M90 256h32M390 256h32"/>
+  </g>
+</svg>

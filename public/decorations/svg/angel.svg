@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="hole"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="166" fill="#000"/></mask>
+    <radialGradient id="ag" cx="50%" cy="28%" r="55%">
+      <stop offset="0%" stop-color="#fef9c3"/><stop offset="55%" stop-color="#fde047"/><stop offset="100%" stop-color="#ca8a04"/>
+    </radialGradient>
+    <filter id="aglow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="aw" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#fefce8" stop-opacity=".95"/><stop offset="100%" stop-color="#fde68a" stop-opacity=".55"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-angel)">
+    <ellipse cx="256" cy="72" rx="92" ry="26" fill="url(#ag)" filter="url(#aglow)" opacity=".98">
+      <animate attributeName="opacity" values=".88;1;.88" dur="3.2s" repeatCount="indefinite"/>
+    </ellipse>
+    <path fill="url(#aw)" d="M32 200 Q96 120 168 168 Q120 200 88 280 Q56 240 32 200z"/>
+    <path fill="url(#aw)" d="M480 200 Q416 120 344 168 Q392 200 424 280 Q456 240 480 200z"/>
+    <path fill="url(#aw)" opacity=".35" d="M48 220 Q112 160 176 200 Q128 248 96 320 Q64 272 48 220z"/>
+    <path fill="url(#aw)" opacity=".35" d="M464 220 Q400 160 336 200 Q384 248 416 320 Q448 272 464 220z"/>
+    <circle cx="256" cy="256" r="176" stroke="#fde047" stroke-width="4" fill="none" opacity=".55"/>
+    <circle cx="256" cy="256" r="180" stroke="#fef3c7" stroke-width="1.5" opacity=".35"/>
+  </g>
+</svg>

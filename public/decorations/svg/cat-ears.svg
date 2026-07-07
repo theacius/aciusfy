@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="hole"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="166" fill="#000"/></mask>
+    <linearGradient id="ce" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbcfe8"/><stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="cein" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#f9a8d4"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-cat)">
+    <path fill="url(#ce)" stroke="#831843" stroke-width="2.5" d="M118 168 L152 44 L228 132 Z"/>
+    <path fill="url(#cein)" d="M138 108 L168 68 L198 118 Z"/>
+    <path fill="url(#ce)" stroke="#831843" stroke-width="2.5" d="M394 168 L360 44 L284 132 Z"/>
+    <path fill="url(#cein)" d="M374 108 L344 68 L314 118 Z"/>
+    <circle cx="256" cy="256" r="178" stroke="#db2777" stroke-width="5" fill="none"/>
+    <circle cx="256" cy="256" r="182" stroke="#fbcfe8" stroke-width="2" opacity=".45"/>
+    <ellipse cx="152" cy="118" rx="8" ry="10" fill="#fce7f3" opacity=".5"/>
+    <ellipse cx="360" cy="118" rx="8" ry="10" fill="#fce7f3" opacity=".5"/>
+  </g>
+</svg>

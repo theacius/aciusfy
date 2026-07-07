@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-hex"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <filter id="ng" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g mask="url(#m-hex)" filter="url(#ng)">
+    <g transform="translate(256 256)">
+      <polygon points="-168,-97 0,-194 168,-97 168,97 0,194 -168,97" stroke="#22d3ee" stroke-width="5" fill="none" opacity=".92">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="28s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="-142,-82 0,-164 142,-82 142,82 0,164 -142,82" stroke="#a855f7" stroke-width="3" fill="none" opacity=".65">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="20s" repeatCount="indefinite"/>
+      </polygon>
+    </g>
+    <circle cx="256" cy="256" r="184" stroke="#06b6d4" stroke-width="2" fill="none" opacity=".35"/>
+  </g>
+</svg>

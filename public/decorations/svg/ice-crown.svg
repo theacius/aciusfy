@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-ice"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <linearGradient id="ice" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff"/><stop offset="50%" stop-color="#7dd3fc"/><stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="ice2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".5"/><stop offset="100%" stop-color="#bae6fd" stop-opacity=".2"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-ice)">
+    <path fill="url(#ice)" stroke="#0369a1" stroke-width="2" d="M88 188 L132 52 L188 140 L256 24 L324 140 L380 52 L424 188 L408 392 H104 Z" opacity=".9"/>
+    <path fill="url(#ice2)" d="M120 188 L160 88 L200 168 L256 72 L312 168 L352 88 L392 188 L376 360 H136 Z"/>
+    <path stroke="#e0f2fe" stroke-width="2" fill="none" opacity=".6" d="M160 188 L200 120 M312 120 L352 188"/>
+    <circle cx="256" cy="256" r="176" stroke="#38bdf8" stroke-width="5" fill="none"/>
+    <circle cx="256" cy="256" r="180" stroke="#bae6fd" stroke-width="1.5" opacity=".5"/>
+  </g>
+</svg>

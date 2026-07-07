@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-bolt"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <filter id="lz" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g mask="url(#m-bolt)">
+    <path fill="#fbbf24" stroke="#a16207" stroke-width="2" filter="url(#lz)" opacity=".95" d="M388 52 L318 188h52l-38 142 118-166h-48l42-164z"/>
+    <path fill="#fef9c3" opacity=".55" d="M372 76 L322 176h44l-28 108 88-124h-40l34-136z"/>
+    <path fill="#fde047" opacity=".4" d="M96 96 L120 140 104 180 148 160 132 220 188 140H140L96 96z"/>
+    <circle cx="256" cy="256" r="184" stroke="#eab308" stroke-width="3" fill="none" opacity=".45">
+      <animate attributeName="opacity" values=".25;.55;.25" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

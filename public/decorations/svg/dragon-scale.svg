@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="hole"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="166" fill="#000"/></mask>
+    <linearGradient id="dr" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7f1d1d"/><stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-dragon)">
+    <g fill="url(#dr)" stroke="#451a03" stroke-width="1.2" opacity=".82">
+      <path d="M72 196 Q108 152 144 196 Q108 240 72 196zM368 196 Q404 152 440 196 Q404 240 368 196z"/>
+      <path d="M108 340 Q144 296 180 340 Q144 384 108 340zM332 340 Q368 296 404 340 Q368 384 332 340z"/>
+      <path d="M220 52 Q256 12 292 52 Q256 92 220 52zM220 460 Q256 420 292 460 Q256 500 220 460z"/>
+    </g>
+    <circle cx="256" cy="256" r="176" stroke="#dc2626" stroke-width="4" fill="none"/>
+    <circle cx="256" cy="256" r="180" stroke="#ea580c" stroke-width="1.5" opacity=".4"/>
+  </g>
+</svg>

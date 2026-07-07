@@ -1,0 +1,325 @@
+/* ====== Badge Animations (26 types) ====== */
+
+@property --badge-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --badge-beam {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* 1. ELECTRIC_BORDER — handled via inline SVG turbulence filter in BadgeCard */
+
+/* 2. SHADOW_PULSE */
+@keyframes badge-shadow-pulse {
+  0%, 100% { box-shadow: 0 0 6px 0 var(--badge-border); }
+  50% { box-shadow: 0 0 20px 6px var(--badge-border); }
+}
+.badge-anim-shadow-pulse { animation: badge-shadow-pulse 2s ease-in-out infinite; }
+
+/* 3. HOVER_GLOW */
+.badge-anim-hover-glow { transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.badge-anim-hover-glow:hover { box-shadow: 0 0 24px 4px var(--badge-border); transform: scale(1.08); }
+
+/* 4. RAINBOW_BORDER */
+@keyframes badge-rainbow-spin { 0% { --badge-angle: 0deg; } 100% { --badge-angle: 360deg; } }
+.badge-anim-rainbow {
+  background: conic-gradient(from var(--badge-angle, 0deg), #f87171, #fbbf24, #34d399, #60a5fa, #a78bfa, #f87171);
+  animation: badge-rainbow-spin 3s linear infinite;
+}
+
+/* 5. FIRE_BORDER — animated lava gradient wrapper */
+@keyframes badge-fire-glow {
+  0%, 100% { box-shadow: 0 0 8px #f97316, 0 0 16px #ef4444; }
+  33% { box-shadow: 0 0 18px #f97316, 0 0 32px #ef4444, 0 0 6px #fbbf24; }
+  66% { box-shadow: 0 0 12px #ef4444, 0 0 24px #f97316; }
+}
+.badge-anim-fire {
+  background: conic-gradient(from var(--badge-angle, 0deg), #ef4444, #f97316 25%, #fbbf24 40%, #f97316 60%, #ef4444 80%, #ef4444);
+  animation: badge-rainbow-spin 2.5s linear infinite, badge-fire-glow 1s ease-in-out infinite;
+}
+
+/* 6. NEON_FLICKER — neon border beam with flicker */
+@keyframes badge-neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    box-shadow: 0 0 6px var(--badge-border), 0 0 18px var(--badge-border), 0 0 30px var(--badge-border);
+    opacity: 1;
+  }
+  20%, 24%, 55% { box-shadow: none; opacity: 0.6; }
+}
+.badge-anim-neon-flicker {
+  background: conic-gradient(from var(--badge-angle, 0deg), var(--badge-border), transparent 30%, var(--badge-border) 50%, transparent 80%, var(--badge-border));
+  animation: badge-rainbow-spin 1.8s linear infinite, badge-neon-flicker 2.5s ease-in-out infinite;
+}
+
+/* 7. CYBER_GLITCH */
+@keyframes badge-cyber-glitch {
+  0%, 100% { transform: translate(0); filter: hue-rotate(0deg); }
+  10% { transform: translate(-2px, 1px); filter: hue-rotate(90deg); }
+  20% { transform: translate(2px, -1px); filter: hue-rotate(180deg); }
+  30% { transform: translate(0); filter: hue-rotate(0deg); }
+}
+.badge-anim-cyber-glitch { animation: badge-cyber-glitch 3s ease-in-out infinite; }
+
+/* 8. BREATHING */
+@keyframes badge-breathing {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 4px var(--badge-border); }
+  50% { transform: scale(1.06); box-shadow: 0 0 16px var(--badge-border); }
+}
+.badge-anim-breathing { animation: badge-breathing 3s ease-in-out infinite; }
+
+/* 9. HEARTBEAT */
+@keyframes badge-heartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}
+.badge-anim-heartbeat { animation: badge-heartbeat 1.4s ease-in-out infinite; }
+
+/* 10. ORBIT */
+@keyframes badge-orbit {
+  0% { box-shadow: 8px 0 8px -4px var(--badge-border); }
+  25% { box-shadow: 0 8px 8px -4px var(--badge-border); }
+  50% { box-shadow: -8px 0 8px -4px var(--badge-border); }
+  75% { box-shadow: 0 -8px 8px -4px var(--badge-border); }
+  100% { box-shadow: 8px 0 8px -4px var(--badge-border); }
+}
+.badge-anim-orbit { animation: badge-orbit 2s linear infinite; }
+
+/* 11. BORDER_BEAM */
+@keyframes badge-beam-spin { 0% { --badge-beam: 0deg; } 100% { --badge-beam: 360deg; } }
+.badge-anim-border-beam {
+  background: conic-gradient(from var(--badge-beam, 0deg), transparent 85%, var(--badge-border) 95%, transparent 100%);
+  animation: badge-beam-spin 2s linear infinite;
+}
+
+/* 12. SHIMMER */
+@keyframes badge-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.badge-anim-shimmer {
+  background-image: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: badge-shimmer 2.5s linear infinite;
+}
+
+/* 13. RIPPLE */
+@keyframes badge-ripple {
+  0% { box-shadow: 0 0 0 0 var(--badge-border); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+.badge-anim-ripple { animation: badge-ripple 1.8s ease-out infinite; }
+
+/* 14. PLASMA — multi-color rotating gradient wrapper */
+@keyframes badge-plasma-glow {
+  0% { box-shadow: 0 0 12px #a855f7, 0 0 24px #6366f1; }
+  33% { box-shadow: 0 0 18px #ec4899, 0 0 36px #a855f7; }
+  66% { box-shadow: 0 0 14px #6366f1, 0 0 30px #3b82f6; }
+  100% { box-shadow: 0 0 12px #a855f7, 0 0 24px #6366f1; }
+}
+.badge-anim-plasma {
+  background: conic-gradient(from var(--badge-angle, 0deg), #a855f7, #ec4899 25%, #6366f1 50%, #3b82f6 75%, #a855f7);
+  animation: badge-rainbow-spin 3s linear infinite, badge-plasma-glow 3s ease-in-out infinite;
+}
+
+/* 15. FROST — icy rotating gradient wrapper */
+@keyframes badge-frost-glow {
+  0%, 100% { box-shadow: 0 0 10px #93c5fd, 0 0 20px #bfdbfe; }
+  50% { box-shadow: 0 0 20px #60a5fa, 0 0 40px #93c5fd; }
+}
+.badge-anim-frost {
+  background: conic-gradient(from var(--badge-angle, 0deg), #bfdbfe, #60a5fa 25%, #93c5fd 50%, #dbeafe 75%, #bfdbfe);
+  animation: badge-rainbow-spin 4s linear infinite, badge-frost-glow 3s ease-in-out infinite;
+}
+
+/* 16. GOLD_SHINE */
+@keyframes badge-gold-shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.badge-anim-gold-shine {
+  background: linear-gradient(110deg, #b45309 0%, #f59e0b 25%, #fde68a 50%, #f59e0b 75%, #b45309 100%);
+  background-size: 200% 100%;
+  animation: badge-gold-shine 3s linear infinite;
+}
+
+/* 17. VORTEX */
+@keyframes badge-vortex {
+  0% { transform: rotate(0deg); box-shadow: 0 0 10px var(--badge-border); }
+  50% { transform: rotate(3deg); box-shadow: 0 0 20px var(--badge-border); }
+  100% { transform: rotate(0deg); box-shadow: 0 0 10px var(--badge-border); }
+}
+.badge-anim-vortex { animation: badge-vortex 2s ease-in-out infinite; }
+
+/* 18. AURORA — aurora borealis gradient wrapper */
+@keyframes badge-aurora-glow {
+  0% { box-shadow: 0 0 12px #34d399, 0 0 24px #6366f1; }
+  25% { box-shadow: 0 0 16px #a78bfa, 0 0 32px #34d399; }
+  50% { box-shadow: 0 0 12px #60a5fa, 0 0 24px #a78bfa; }
+  75% { box-shadow: 0 0 16px #34d399, 0 0 32px #60a5fa; }
+  100% { box-shadow: 0 0 12px #34d399, 0 0 24px #6366f1; }
+}
+.badge-anim-aurora {
+  background: conic-gradient(from var(--badge-angle, 0deg), #34d399, #6366f1 25%, #a78bfa 50%, #60a5fa 75%, #34d399);
+  animation: badge-rainbow-spin 5s linear infinite, badge-aurora-glow 4s ease-in-out infinite;
+}
+
+/* 19. LIGHTNING */
+@keyframes badge-lightning {
+  0%, 100% { box-shadow: 0 0 4px var(--badge-border); opacity: 1; }
+  5% { box-shadow: 0 0 30px var(--badge-border), 0 0 60px var(--badge-border); opacity: 1; }
+  10% { box-shadow: 0 0 4px var(--badge-border); opacity: 0.8; }
+  15% { box-shadow: 0 0 20px var(--badge-border), 0 0 40px var(--badge-border); opacity: 1; }
+  20% { box-shadow: 0 0 4px var(--badge-border); opacity: 1; }
+}
+.badge-anim-lightning { animation: badge-lightning 4s ease-in-out infinite; }
+
+/* 20. SNAKE */
+@keyframes badge-snake {
+  0% { box-shadow: 6px 0 0 0 var(--badge-border); }
+  12.5% { box-shadow: 4px 4px 0 0 var(--badge-border); }
+  25% { box-shadow: 0 6px 0 0 var(--badge-border); }
+  37.5% { box-shadow: -4px 4px 0 0 var(--badge-border); }
+  50% { box-shadow: -6px 0 0 0 var(--badge-border); }
+  62.5% { box-shadow: -4px -4px 0 0 var(--badge-border); }
+  75% { box-shadow: 0 -6px 0 0 var(--badge-border); }
+  87.5% { box-shadow: 4px -4px 0 0 var(--badge-border); }
+  100% { box-shadow: 6px 0 0 0 var(--badge-border); }
+}
+.badge-anim-snake { animation: badge-snake 1.5s linear infinite; }
+
+/* 21. SCANLINE */
+@keyframes badge-scanline {
+  0% { background-position: 0 -100%; }
+  100% { background-position: 0 200%; }
+}
+.badge-anim-scanline {
+  background-image: linear-gradient(0deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  animation: badge-scanline 2.5s linear infinite;
+}
+
+/* 22. DOUBLE_GLOW */
+@keyframes badge-double-glow {
+  0%, 100% { box-shadow: 0 0 8px var(--badge-border), 0 0 0 4px rgba(255,255,255,0.05); }
+  50% { box-shadow: 0 0 20px var(--badge-border), 0 0 0 8px rgba(255,255,255,0.1); }
+}
+.badge-anim-double-glow { animation: badge-double-glow 2s ease-in-out infinite; }
+
+/* 23. SPOTLIGHT */
+@keyframes badge-spotlight {
+  0% { background-position: -100% -100%; }
+  50% { background-position: 200% 200%; }
+  100% { background-position: -100% -100%; }
+}
+.badge-anim-spotlight {
+  background-image: radial-gradient(circle 30px, rgba(255,255,255,0.3), transparent 70%);
+  background-size: 200% 200%;
+  animation: badge-spotlight 3s ease-in-out infinite;
+}
+
+/* 24. METEOR */
+@keyframes badge-meteor {
+  0% { box-shadow: 12px -12px 8px -4px var(--badge-border); }
+  25% { box-shadow: -12px -12px 8px -4px var(--badge-border); }
+  50% { box-shadow: -12px 12px 8px -4px var(--badge-border); }
+  75% { box-shadow: 12px 12px 8px -4px var(--badge-border); }
+  100% { box-shadow: 12px -12px 8px -4px var(--badge-border); }
+}
+.badge-anim-meteor { animation: badge-meteor 2s linear infinite; }
+
+/* 25. TOXIC — radioactive green gradient wrapper */
+@keyframes badge-toxic-glow {
+  0%, 100% { box-shadow: 0 0 10px #22c55e, 0 0 22px #16a34a; }
+  50% { box-shadow: 0 0 20px #4ade80, 0 0 40px #22c55e, 0 0 6px #bbf7d0; }
+}
+.badge-anim-toxic {
+  background: conic-gradient(from var(--badge-angle, 0deg), #16a34a, #4ade80 25%, #22c55e 50%, #bbf7d0 65%, #16a34a);
+  animation: badge-rainbow-spin 3s linear infinite, badge-toxic-glow 2s ease-in-out infinite;
+}
+
+/* 26. DIAMOND_SPARKLE — shimmering diamond gradient wrapper */
+@keyframes badge-diamond-glow {
+  0%, 100% { box-shadow: 0 0 8px #e2e8f0, 0 0 16px #94a3b8; }
+  25% { box-shadow: 4px -4px 12px #e2e8f0, -4px 4px 12px #94a3b8; }
+  50% { box-shadow: 0 0 24px #f1f5f9, 0 0 44px #cbd5e1; }
+  75% { box-shadow: -4px -4px 12px #e2e8f0, 4px 4px 12px #94a3b8; }
+}
+.badge-anim-diamond {
+  background: conic-gradient(from var(--badge-angle, 0deg), #e2e8f0, #94a3b8 20%, #f1f5f9 40%, #cbd5e1 60%, #e2e8f0 80%, #e2e8f0);
+  animation: badge-rainbow-spin 3.5s linear infinite, badge-diamond-glow 3s ease-in-out infinite;
+}
+
+/* 27. STAR_BORDER — star streaks running along each edge */
+@keyframes star-streak-h {
+  0%   { left: -40%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+@keyframes star-streak-h-rev {
+  0%   { right: -40%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { right: 100%; opacity: 0; }
+}
+@keyframes star-streak-v {
+  0%   { top: -40%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+@keyframes star-streak-v-rev {
+  0%   { bottom: -40%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { bottom: 100%; opacity: 0; }
+}
+
+/* 28. SHINE_BORDER — conic gradient spinning around the border */
+@keyframes badge-shine-spin {
+  0%   { --badge-angle: 0deg; }
+  100% { --badge-angle: 360deg; }
+}
+.badge-anim-shine {
+  background: conic-gradient(
+    from var(--badge-angle, 0deg),
+    transparent 0%,
+    var(--badge-border) 10%,
+    transparent 20%,
+    transparent 100%
+  );
+  animation: badge-shine-spin 3s linear infinite;
+}
+
+/* 29. NEON_PULSE — pulsing neon multi-layer glow */
+@keyframes badge-neon-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 5px var(--badge-border),
+      0 0 10px var(--badge-border),
+      0 0 20px var(--badge-border);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow:
+      0 0 10px var(--badge-border),
+      0 0 25px var(--badge-border),
+      0 0 50px var(--badge-border),
+      0 0 70px var(--badge-border);
+    filter: brightness(1.15);
+  }
+}
+.badge-anim-neon-pulse {
+  animation: badge-neon-pulse 2s ease-in-out infinite;
+  border-color: var(--badge-border) !important;
+}

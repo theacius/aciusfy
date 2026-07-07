@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-prism"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <linearGradient id="pr" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#e879f9"/><stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-prism)">
+    <polygon points="256,56 420,200 364,420 148,420 92,200" fill="none" stroke="url(#pr)" stroke-width="4" opacity=".85"/>
+    <polygon points="256,96 380,210 328,388 184,388 132,210" fill="none" stroke="#fff" stroke-width="2" opacity=".35"/>
+    <line x1="256" y1="96" x2="256" y2="388" stroke="url(#pr)" stroke-width="2" opacity=".5"/>
+    <line x1="132" y1="210" x2="380" y2="210" stroke="url(#pr)" stroke-width="2" opacity=".5"/>
+    <line x1="184" y1="388" x2="328" y2="96" stroke="url(#pr)" stroke-width="1.5" opacity=".4"/>
+    <circle cx="256" cy="256" r="176" stroke="#a5f3fc" stroke-width="3" fill="none" opacity=".55"/>
+  </g>
+</svg>

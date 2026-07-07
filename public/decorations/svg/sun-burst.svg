@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-sun"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <linearGradient id="su" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/><stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-sun)">
+    <circle cx="256" cy="256" r="118" fill="#fef3c7" opacity=".2"/>
+    <g transform="translate(256 256)" stroke="url(#su)" stroke-width="7" stroke-linecap="round">
+      <g>
+        <line x1="0" y1="-210" x2="0" y2="-175"/><line x1="0" y1="175" x2="0" y2="210"/>
+        <line x1="-210" y1="0" x2="-175" y2="0"/><line x1="175" y1="0" x2="210" y2="0"/>
+        <line x1="-148" y1="-148" x2="-122" y2="-122"/><line x1="122" y1="122" x2="148" y2="148"/>
+        <line x1="148" y1="-148" x2="122" y2="-122"/><line x1="-122" y1="122" x2="-148" y2="148"/>
+        <line x1="-105" y1="-182" x2="-88" y2="-152"/><line x1="88" y1="152" x2="105" y2="182"/>
+        <line x1="105" y1="-182" x2="88" y2="-152"/><line x1="-88" y1="152" x2="-105" y2="182"/>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="36s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    <circle cx="256" cy="256" r="176" stroke="#f59e0b" stroke-width="4" fill="none"/>
+  </g>
+</svg>

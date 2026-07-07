@@ -1,0 +1,559 @@
+@import "tailwindcss" source(none);
+@source "../**/*.{js,ts,jsx,tsx,mdx}";
+
+:root,
+.dark {
+  /*
+   * Sistem fontları — build / prod için internet + fonts.googleapis.com gerekmez.
+   * (İstersen sonra next/font/local ile .woff2 ekleyebilirsin.)
+   */
+  --font-mona: "Mona Sans Variable", "Mona Sans", system-ui, -apple-system, sans-serif;
+  --font-geist-sans: var(--font-mona);
+  --font-geist-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+  --font-playfair-family: var(--font-mona);
+  --font-playfair: var(--font-mona);
+  --font-display: var(--font-mona);
+
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #111113;
+  --card-hover: #18181b;
+  --border: rgba(255, 255, 255, 0.08);
+  --muted: #a1a1aa;
+  --accent: #a78bfa;
+  --accent-secondary: #e4e4e7;
+  --accent-gradient: linear-gradient(135deg, #a78bfa 0%, #fafafa 50%, #a78bfa 100%);
+  --success: #10b981;
+  --danger: #ef4444;
+  --player-bg: #111113;
+  --sidebar-bg: #09090b;
+  --sidebar-width: 300px;
+  --sidebar-collapsed-width: 64px;
+  --player-height: 80px;
+  --navbar-height: 64px;
+  /* Mobil: alt sekme çubuğu (lg üstü 0) */
+  --bottom-nav-height: 0px;
+  /* Oynatıcı ile alt menü arası boşluk (sadece mobilde --bottom-stack-gap > 0) */
+  --bottom-stack-gap: 0px;
+  /*
+   * Tailwind arbitrary class'larında calc(env(..., 0px)) içindeki virgül sınıfı böler;
+   * alt chrome tek yerde hesaplanır.
+   */
+  --player-bottom-offset: 0px;
+  --main-content-bottom-padding: var(--player-height);
+}
+@media (max-width: 1023px) {
+  :root,
+  .dark {
+    /*
+     * Mobil alt krom (minimal): 48px sekme satırı + home indicator.
+     * Tek kaynak: içerik ve toast’lar --main-content-bottom-padding ile hizalanır.
+     */
+    --bottom-nav-row: 48px;
+    --bottom-nav-total: calc(var(--bottom-nav-row) + env(safe-area-inset-bottom, 0px));
+    --bottom-stack-gap: 8px;
+    /* Kompakt oynatıcı (kapak + kontrol + ince progress) */
+    --player-height: 76px;
+    --player-bottom-offset: calc(var(--bottom-nav-total) + var(--bottom-stack-gap));
+    --main-content-bottom-padding: calc(
+      var(--player-height) + var(--bottom-nav-total) + var(--bottom-stack-gap)
+    );
+    /* Geriye dönük: bazı sınıflar hâlâ --bottom-nav-height okuyabilir */
+    --bottom-nav-height: var(--bottom-nav-total);
+  }
+}
+.player-compact {
+  --player-height: 56px;
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-player-bg: var(--player-bg);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --font-sans: var(--font-mona);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-mona);
+  --font-playfair: var(--font-mona);
+  --color-slider-cream: #f5ebe0;
+  --color-slider-cream-muted: #d4c9b8;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/*
+ * Kaydırma çubuklarını tüm uygulamada gizle (tekerlek / dokunma kaydırması çalışır).
+ * .scrollbar-thin / tailwind eklentisi özgüllüğünü aşmak için webkit’te !important.
+ */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-corner {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Geriye dönük: açıkça sınıf verilmiş yerler aynı davranır */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(167, 139, 250, 0.35);
+  color: #fff;
+}
+
+@keyframes landing-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-landing-marquee {
+  animation: landing-marquee 40s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-landing-marquee {
+    animation: none !important;
+  }
+}
+
+@keyframes ripple {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aura mesh gradient – yumuşak blob animasyonları */
+@keyframes mesh-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(5%, 0) scale(1.05);
+  }
+  66% {
+    transform: translate(0, 3%) scale(0.98);
+  }
+}
+@keyframes mesh-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-4%, 2%) scale(1.02);
+  }
+}
+@keyframes mesh-3 {
+  0%, 100% {
+    transform: translate(-50%, 0) scale(1);
+  }
+  33% {
+    transform: translate(-48%, -2%) scale(1.03);
+  }
+  66% {
+    transform: translate(-52%, 1%) scale(0.97);
+  }
+}
+@keyframes mesh-4 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(3%, -3%);
+  }
+}
+@keyframes mesh-5 {
+  0%, 100% {
+    transform: translate(0, -50%);
+  }
+  50% {
+    transform: translate(-2%, -48%);
+  }
+}
+.animate-mesh-1 {
+  animation: mesh-1 25s ease-in-out infinite;
+}
+.animate-mesh-2 {
+  animation: mesh-2 30s ease-in-out infinite;
+}
+.animate-mesh-3 {
+  animation: mesh-3 28s ease-in-out infinite;
+}
+.animate-mesh-4 {
+  animation: mesh-4 22s ease-in-out infinite;
+}
+.animate-mesh-5 {
+  animation: mesh-5 26s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+}
+
+.glass {
+  background: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Premium chrome — Lenis + GSAP + Mona Sans landing/app shell */
+:root {
+  --premium-nav-height: 4.75rem;
+  /* Stacking order — chrome above panels, dropdowns above chrome */
+  --z-now-playing: 30;
+  --z-sidebar: 40;
+  --z-player: 52;
+  --z-chrome: 56;
+  --z-dropdown: 80;
+  --z-sheet: 85;
+  --z-overlay: 200;
+}
+
+.premium-nav-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.82) 0%, rgba(9, 9, 11, 0.55) 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 12px 40px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+.premium-nav-offset {
+  padding-top: calc(var(--premium-nav-height) + env(safe-area-inset-top, 0px));
+}
+
+.premium-sidebar {
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.96) 0%, rgba(9, 9, 11, 0.99) 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+.premium-sidebar-link {
+  border-radius: 0.75rem;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.premium-sidebar-link[data-active="true"],
+.premium-sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.premium-app-topbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.78) 0%, rgba(9, 9, 11, 0.52) 100%);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+.premium-glass-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(17, 17, 19, 0.65);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.premium-subnav-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.82) 0%, rgba(9, 9, 11, 0.58) 100%);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+.premium-dropdown-panel {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(165deg, rgba(24, 24, 27, 0.98) 0%, rgba(9, 9, 11, 0.98) 100%);
+  backdrop-filter: blur(24px) saturate(150%);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.premium-now-playing-shell {
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.94) 0%, rgba(9, 9, 11, 0.99) 100%);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fafafa, #a78bfa, #fafafa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Landing — premium section rhythm */
+.landing-section {
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+
+.landing-section-inner {
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .landing-section-inner {
+    padding-inline: 1.5rem;
+  }
+}
+
+.landing-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(161, 161, 170, 0.9);
+}
+
+.landing-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+.landing-subhead {
+  margin-top: 1.25rem;
+  max-width: 42rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.landing-bento-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  background: rgba(17, 17, 19, 0.55);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 16px 48px rgba(0, 0, 0, 0.18);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.landing-bento-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Aurora başlık — sadece geniş ekranda hafif kayma (mobilde sabit, flicker yok) */
+@keyframes aurora-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .aurora-text-layer,
+  .aurora-text-glow {
+    animation: aurora-shift 8s ease-in-out infinite;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurora-text-layer,
+  .aurora-text-glow {
+    animation: none !important;
+    background-position: 50% 50% !important;
+  }
+}
+
+/* Mobil: dokunma gecikmesi / vurgu */
+/* Capacitor / iOS safe-area — inline style yerine sınıf (hydration tutarlılığı) */
+.landing-header-safe {
+  /* Üst kenara yapışmayı önle: safe area + ek nefes */
+  padding-top: max(1.125rem, calc(env(safe-area-inset-top, 0px) + 0.5rem));
+}
+.landing-sheet-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.mobile-nav-safe-bottom {
+  /* Safe area artık --bottom-nav-total içinde; burada sadece ince üst nefes */
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Ana içerik: son öğeler oynatıcı + alt menünün altında kalmaz */
+.main-scroll-area {
+  scroll-padding-bottom: var(--main-content-bottom-padding);
+}
+
+@media (max-width: 1023px) {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: auto !important;
+  }
+  /* backdrop-filter mobil GPU'da çok pahalı — kapat, opaklık ile telafi */
+  [class*="backdrop-blur"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .glass {
+    background: rgba(18, 18, 18, 0.96);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  /* Çoğu dekorative CSS animasyonu kapat (sade görünüm) */
+  .animate-mesh-1,
+  .animate-mesh-2,
+  .animate-mesh-3,
+  .animate-mesh-4,
+  .animate-mesh-5,
+  .animate-pulse-glow,
+  .animate-float,
+  .animate-slide-up {
+    animation: none !important;
+  }
+  .animate-spin,
+  .animate-pulse,
+  .animate-bounce,
+  .animate-ping {
+    animation: none !important;
+  }
+}
+
+/* Küçük oynatıcı eşitleyici çubukları — Framer yerine saf CSS (düşük maliyet) */
+@keyframes aciusfy-eq {
+  0%,
+  100% {
+    height: 4px;
+  }
+  50% {
+    height: 12px;
+  }
+}
+.aciusfy-eq-bar {
+  width: 3px;
+  border-radius: 9999px;
+  background: rgb(34 197 94);
+  animation: aciusfy-eq 0.55s ease-in-out infinite;
+}
+.aciusfy-eq-bar:nth-child(1) {
+  animation-delay: 0s;
+}
+.aciusfy-eq-bar:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.aciusfy-eq-bar:nth-child(3) {
+  animation-delay: 0.24s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .aciusfy-eq-bar {
+    animation: none;
+    height: 8px;
+  }
+}
+
+/* Mobil: oynatıcı EQ çubukları sabit (titreme yok) */
+@media (max-width: 1023px) {
+  .aciusfy-eq-bar {
+    animation: none !important;
+    height: 7px;
+  }
+}
+
+
+/* Electron frameless: üst bardan sürükle; buton/linky/input tıklanabilir kalsın */
+.aciusfy-electron-titlebar {
+  -webkit-app-region: drag;
+}
+.aciusfy-electron-titlebar a,
+.aciusfy-electron-titlebar button,
+.aciusfy-electron-titlebar input,
+.aciusfy-electron-titlebar textarea,
+.aciusfy-electron-titlebar select,
+.aciusfy-electron-titlebar [role="button"],
+.aciusfy-electron-titlebar [contenteditable="true"] {
+  -webkit-app-region: no-drag;
+}
+/** Profil + pencere düğmeleri bloğu: boşluk tıklanınca sürükleme yemesin (frameless) */
+.aciusfy-electron-titlebar .aciusfy-electron-chrome {
+  -webkit-app-region: no-drag;
+}

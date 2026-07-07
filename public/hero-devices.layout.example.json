@@ -1,0 +1,21 @@
+{
+  "_comment": "Kopyala: hero-devices.layout.json — repoda zaten public/hero-devices.layout.json var; bu dosya şablon.",
+  "camera": {
+    "position": [-0.32, 2.28, 8.35],
+    "fov": 42
+  },
+  "phone": {
+    "position": [0.84, 1.14, 2.56],
+    "rotation": [-0.13962634015954636, 1.9896753472735358, -0.4014257279586958],
+    "scale": 1.31,
+    "useBounds": true,
+    "boundsMargin": 1.25
+  },
+  "laptop": {
+    "position": [2.96, -0.18, 1.66],
+    "rotation": [0.12217304763960307, -0.6632251157578453, 0.08726646259971647],
+    "scale": 1.27,
+    "useBounds": true,
+    "boundsMargin": 1.25
+  }
+}

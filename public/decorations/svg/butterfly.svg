@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-bfly"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <linearGradient id="bw" x1="100%" y1="50%" x2="0%" y2="50%">
+      <stop offset="0%" stop-color="#5b21b6"/><stop offset="50%" stop-color="#c026d3"/><stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="bw2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0abfc" stop-opacity=".95"/><stop offset="100%" stop-color="#a855f7" stop-opacity=".45"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-bfly)">
+    <path fill="url(#bw)" opacity=".93" d="M256 268 C200 228 120 200 56 248 C48 292 112 332 188 308 C140 328 88 368 104 412 C152 392 212 348 248 292z"/>
+    <path fill="url(#bw)" opacity=".93" d="M256 268 C312 228 392 200 456 248 C464 292 400 332 324 308 C372 328 424 368 408 412 C360 392 300 348 264 292z"/>
+    <path fill="url(#bw2)" d="M256 268 C210 252 168 252 132 276 C168 288 210 286 248 278z"/>
+    <path fill="url(#bw2)" d="M256 268 C302 252 344 252 380 276 C344 288 302 286 264 278z"/>
+    <circle cx="256" cy="256" r="186" stroke="#d946ef" stroke-width="3" fill="none" opacity=".42"/>
+    <path stroke="#e879f9" stroke-width="2" fill="none" opacity=".45" d="M256 92v88M256 332v88"/>
+  </g>
+</svg>

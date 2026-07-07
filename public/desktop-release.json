@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0",
+  "releaseNotes": [
+    "Masaüstü kurulum (Windows installer)",
+    "Discord Rich Presence: şarkı kapağı ve dinleme durumu",
+    "Blend: performans ve güncelleme akışı iyileştirmeleri"
+  ],
+  "downloadUrl": null
+}

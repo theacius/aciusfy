@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-void"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <radialGradient id="vd" cx="50%" cy="50%" r="70%">
+      <stop offset="50%" stop-color="#020617" stop-opacity="0"/><stop offset="100%" stop-color="#1e1b4b" stop-opacity=".55"/>
+    </radialGradient>
+    <filter id="vglow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <g mask="url(#m-void)">
+    <circle cx="256" cy="256" r="248" fill="url(#vd)"/>
+    <g stroke="#818cf8" stroke-width="3" fill="none" filter="url(#vglow)" opacity=".88">
+      <polygon points="256,52 388,188 332,392 180,392 124,188"/>
+      <polygon points="256,88 352,196 304,364 208,364 160,196"/>
+    </g>
+    <circle cx="256" cy="256" r="188" stroke="#4f46e5" stroke-width="2.5" fill="none" opacity=".55">
+      <animate attributeName="stroke-opacity" values=".35;.75;.35" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="256" cy="256" r="196" stroke="#312e81" stroke-width="1" opacity=".35" stroke-dasharray="6 10"/>
+  </g>
+</svg>

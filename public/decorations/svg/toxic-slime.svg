@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-toxic"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <linearGradient id="tx" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#86efac"/><stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-toxic)">
+    <path fill="url(#tx)" opacity=".88" d="M48 400 Q120 340 200 368 Q280 320 360 352 Q440 330 464 400 L464 480 H48 Z"/>
+    <ellipse cx="128" cy="392" rx="22" ry="30" fill="#bbf7d2" opacity=".45"/>
+    <ellipse cx="392" cy="404" rx="26" ry="22" fill="#bbf7d2" opacity=".4"/>
+    <ellipse cx="268" cy="420" rx="40" ry="18" fill="#4ade80" opacity=".35"/>
+    <circle cx="256" cy="256" r="176" stroke="#22c55e" stroke-width="5" fill="none"/>
+    <circle cx="256" cy="256" r="180" stroke="#86efac" stroke-width="2" opacity=".4">
+      <animate attributeName="r" values="180;184;180" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

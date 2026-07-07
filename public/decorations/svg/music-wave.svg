@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-hidden="true">
+  <defs>
+    <mask id="m-music"><rect width="512" height="512" fill="#fff"/><circle cx="256" cy="256" r="176" fill="#000"/></mask>
+    <linearGradient id="mu" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+  </defs>
+  <g mask="url(#m-music)">
+    <g stroke="url(#mu)" stroke-width="6" stroke-linecap="round" fill="none">
+      <path d="M40 256h40M432 256h40"/>
+      <path d="M88 200v112M128 160v192M168 228v56M208 140v232M248 200v112M288 170v172M328 236v40M368 188v136"/>
+    </g>
+    <path fill="url(#mu)" opacity=".88" d="M236 72h40l10 56h-60l10-56zm0 312h40l10 56h-60l10-56z"/>
+    <circle cx="256" cy="256" r="174" stroke="#a855f7" stroke-width="3" fill="none" opacity=".5"/>
+  </g>
+</svg>
